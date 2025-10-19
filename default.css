@@ -1,0 +1,100 @@
+    :root {
+        --grass: #8ec07c;
+        --teal: #458588;
+        --yellow: #d79921;
+        --red: #cc241d;
+        --gray: #3c3836;
+        --orange: #d65d0e;
+        --purple: #b16285;
+        --black: #282828;
+        --white: #ebdbb2;
+        font-family: main, sans-serif;
+
+        /* font-size: larger; */
+    }
+
+    @font-face {
+        font-family: main;
+        src: url(media/font.woff2) format('woff2'),
+            url(media/font.woff) format('woff'),
+            url(media/font.ttf) format('ttf');
+    }
+
+    button,
+    input {
+        font-family: main, monospace;
+    }
+    input {
+        caret-color: var(--red);
+    }
+
+    .input-container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .input-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .custom-input {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 16px;
+        color: var(--white);
+        background-color: var(--gray);
+        border: 2px solid var(--black);
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .custom-input::placeholder {
+        color: rgba(235, 219, 178, 0.5);
+    }
+
+    .custom-input:focus {
+        border-color: var(--grass);
+        background-color: rgba(60, 56, 54, 0.9);
+        box-shadow: 0 0 0 3px rgba(142, 192, 124, 0.2),
+            0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .custom-input:hover:not(:focus) {
+        border-color: var(--teal);
+    }
+
+    .custom-input.accent-style {
+        border: 2px solid rgba(41, 39, 37, 0.6);
+        border-bottom: 3px solid var(--yellow);
+    }
+
+    .custom-input.accent-style:focus {
+        border-bottom-color: var(--grass);
+        border-color: var(--black);
+    }
+
+    .custom-button {
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--black);
+        background-color: var(--grass);
+        border: 2px solid var(--black);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .custom-button:hover {
+        background-color: var(--yellow);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .custom-button:active {
+        transform: translateY(0);
+    }

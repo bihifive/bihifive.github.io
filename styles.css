@@ -1,0 +1,175 @@
+:root {
+    background: #e39714;
+    background: linear-gradient(35deg, #404320 0%, #726B3A 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+.musics {
+    place-content: center;
+    place-items: center;
+    margin: 50px 0 50px 0;
+    position: relative;
+    display: flex;
+    top: 0;
+    --user-select: none;
+    /* display: inline-masonry; */
+    width: -webkit-fill-available;
+    display: block;
+}
+
+.musics>* {
+    margin:30px;
+    max-width: 300px;
+}
+@media (orientation: portrait) {
+    .musics {
+        /* top:100px; */
+    }
+}
+.music {
+    width: 90px;
+    cursor: pointer;
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.music::after {
+    content: attr(title);
+    position: relative;
+    padding: 5px;
+    place-content: center;
+    word-break: break-word;
+    place-items: center;
+    place-self: center;
+    text-align: center;
+    width: 100px;
+    display: flex;
+    font-size: .7em;
+    top: 101%;
+}
+
+.br {
+    background-image: url(media/br.webp);
+
+}
+.cypress {
+        background-image: url(media/cypress.webp);
+}
+.bleed {
+    background-image: url(media/bleed.webp);
+}
+.music::before {
+    position: absolute;
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 50%50%;
+    filter: invert(100%);
+}
+
+.music[aria-selected="false"]::before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIGZpbGw9IiMwMDAwMDAiIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgCgkgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIDAgMTYzLjg2MSAxNjMuODYxIgoJIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik0zNC44NTcsMy42MTNDMjAuMDg0LTQuODYxLDguMTA3LDIuMDgxLDguMTA3LDE5LjEwNnYxMjUuNjM3YzAsMTcuMDQyLDExLjk3NywyMy45NzUsMjYuNzUsMTUuNTA5TDE0NC42Nyw5Ny4yNzUKCQljMTQuNzc4LTguNDc3LDE0Ljc3OC0yMi4yMTEsMC0zMC42ODZMMzQuODU3LDMuNjEzeiIvPgo8L2c+Cjwvc3ZnPg==);
+}
+
+.music[aria-selected="true"]::before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTEyMC4xNiA0NUEyMC4xNjIgMjAuMTYyIDAgMCAwIDEwMCA2NS4xNnYzODEuNjhBMjAuMTYyIDIwLjE2MiAwIDAgMCAxMjAuMTYgNDY3aDY1LjY4QTIwLjE2MiAyMC4xNjIgMCAwIDAgMjA2IDQ0Ni44NFY2NS4xNkEyMC4xNjIgMjAuMTYyIDAgMCAwIDE4NS44NCA0NWgtNjUuNjh6bTIwNiAwQTIwLjE2MiAyMC4xNjIgMCAwIDAgMzA2IDY1LjE2djM4MS42OEEyMC4xNjIgMjAuMTYyIDAgMCAwIDMyNi4xNiA0NjdoNjUuNjhBMjAuMTYyIDIwLjE2MiAwIDAgMCA0MTIgNDQ2Ljg0VjY1LjE2QTIwLjE2MiAyMC4xNjIgMCAwIDAgMzkxLjg0IDQ1aC02NS42OHoiLz48L3N2Zz4=);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 5px;
+    margin: 0;
+    background-image: url(media/tree1.png), url(media/grass.png)
+        /*, url(media/tree2.png), url(media/tree3.png)*/
+    ;
+    background-size: 200px 200px, 600px 70px
+        /*, 360px 360px, 310px 310px*/
+    ;
+    background-repeat: no-repeat, repeat-x
+        /*, no-repeat, no-repeat*/
+    ;
+    background-position: 90% 100%, 0 101.7%
+        /*, 40% 100%, 90% 100%*/
+    ;
+    image-rendering: pixelated;
+}
+
+
+
+/* @media screen and (max-width: 829px) {
+    body {
+        background-image: url(media/tree1.png);
+        background-size: 300px 300px;
+        background-repeat: space no-repeat;
+        background-position: 0% 100%;
+    }
+} */
+.west_text::before,
+.west_text::after {
+    background-image: url(https://addsoupbase.github.io/cute-emojis/emojis/1224926891719528458.gif);
+    margin: 5px;
+    background-size: cover;
+    content: "";
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px
+}
+
+.west_text {
+    place-items: center;
+    place-content: center;
+    image-rendering: auto;
+    display: flex;
+    text-align: center;
+    margin: 5px
+}
+
+.avatar {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    outline: 3px dotted var(--grass);
+    max-width: 150px;
+    max-height: 150px;
+}
+
+img {
+    image-rendering: initial;
+}
+
+.content {
+    --scrollbar-color: var(--black);
+    --scrollbar-thumb-color: #ebdbb2;
+    scrollbar-width: thin;
+}
+
+/* @media screen and () */
+.main {
+    display: flex;
+    /* place-items: center; */
+    word-break: break-word;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    /* background-color: rgba(60, 56, 54, 0.447);
+    border: 3px solid rgba(41, 39, 37, 0.85); */
+    border-radius: 10px;
+    /* max-width: 100px; */
+    padding-top: 10px;
+    /* padding-bottom: 40px; */
+    /* padding-left: 30px; */
+    /* padding-right: 30px; */
+    /* backdrop-filter: blur(5px); */
+
+
+    text-align: center;
+}
