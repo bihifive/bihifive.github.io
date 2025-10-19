@@ -154,7 +154,7 @@
                     function disable() { 
                         form.textContent = 'Something went wrong'
                     }
-                    fetch(url).then(then).catch(disable)
+                    fetch(url, {method:"HEAD", mode:'cors'}).then(then).catch(disable)
                 }(document.getElementById('form'), 'https://west.deno.dev/')
             </script>
         </div>
