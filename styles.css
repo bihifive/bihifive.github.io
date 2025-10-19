@@ -6,20 +6,21 @@
 }
 
 .musics {
-    place-content: center;
-    place-items: center;
-    margin: 50px 0 50px 0;
-    position: relative;
-    display: flex;
-    top: 0;
-    --user-select: none;
-    /* display: inline-masonry; */
-    width: -webkit-fill-available;
-    display: block;
+        /* max-width: 90%; */
+        place-self: center;
+        place-content: center;
+        place-items: center;
+        margin: 50px 0 50px 0;
+        position: relative;
+        top: 0;
+        --user-select: none;
+        /* display: inline-masonry; */
+        width: -webkit-fill-available;
+        display: block;
 }
 
-.musics>* {
-    margin:30px;
+.musics div {
+    margin:50px 0 50px 0;
     max-width: 300px;
 }
 @media (orientation: portrait) {
@@ -29,6 +30,7 @@
 }
 .music {
     width: 90px;
+    image-rendering: auto;
     cursor: pointer;
     height: 90px;
     background-size: cover;
@@ -45,7 +47,7 @@
     place-items: center;
     place-self: center;
     text-align: center;
-    width: 100px;
+    width: inherit;
     display: flex;
     font-size: .7em;
     top: 101%;
@@ -58,8 +60,20 @@
 .cypress {
         background-image: url(media/cypress.webp);
 }
+.goca {
+    background-image: url(media/goca.webp);
+}
+.ice {
+    background-image: url(media/ice.webp);
+}
+.confusion {
+    background-image: url(media/confusion.webp);
+}
 .bleed {
     background-image: url(media/bleed.webp);
+}
+.carpet {
+    background-image: url(media/carpet.webp);
 }
 .music::before {
     position: absolute;
@@ -82,23 +96,19 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    padding: 5px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* padding: 5px; */
     margin: 0;
     background-image: url(media/tree1.png), url(media/grass.png)
-        /*, url(media/tree2.png), url(media/tree3.png)*/
-    ;
+        /*, url(media/tree2.png), url(media/tree3.png)*/;
     background-size: 200px 200px, 600px 70px
-        /*, 360px 360px, 310px 310px*/
-    ;
+        /*, 360px 360px, 310px 310px*/;
     background-repeat: no-repeat, repeat-x
-        /*, no-repeat, no-repeat*/
-    ;
+        /*, no-repeat, no-repeat*/;
     background-position: 90% 100%, 0 101.7%
-        /*, 40% 100%, 90% 100%*/
-    ;
+        /*, 40% 100%, 90% 100%*/;
     image-rendering: pixelated;
 }
 
@@ -150,11 +160,12 @@ img {
     --scrollbar-color: var(--black);
     --scrollbar-thumb-color: #ebdbb2;
     scrollbar-width: thin;
+    padding: 0 15px 0 15px;
 }
 
 /* @media screen and () */
 .main {
-    display: flex;
+    display: block;
     /* place-items: center; */
     word-break: break-word;
     width: 100%;
@@ -162,14 +173,12 @@ img {
     overflow: auto;
     /* background-color: rgba(60, 56, 54, 0.447);
     border: 3px solid rgba(41, 39, 37, 0.85); */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* max-width: 100px; */
-    padding-top: 10px;
+    /* padding-top: 10px; */
     /* padding-bottom: 40px; */
-    /* padding-left: 30px; */
-    /* padding-right: 30px; */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
     /* backdrop-filter: blur(5px); */
-
-
     text-align: center;
 }
